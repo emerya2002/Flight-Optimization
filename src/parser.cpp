@@ -25,10 +25,8 @@ vector<Flight> parse_csv(const string& filename) {
 		Flight flight;
 
 		// Extract data from the line separated by commas
-		if (getline(ss, flight.start, ',') && getline(ss, flight.end, ',') &&
-			getline(ss, line, ',') && getline(ss, line, ',') &&
-			getline(ss, line, ',')) {
-			
+		if (getline(ss, flight.start, ',') && getline(ss, flight.end, ',')){
+			getline(ss, line, ',');
 			try {
 				// Convert string values to appropriate types
 				flight.price = stoi(line);
